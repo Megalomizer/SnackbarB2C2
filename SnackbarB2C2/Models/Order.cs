@@ -1,18 +1,29 @@
 ﻿using Microsoft.AspNetCore.Localization;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SnackbarB2C2.Models
 {
     public class Order
     {
         // Properties
+        [Key]
         public int Id { get; set; }
+
+        [DataType(DataType.Currency)]
         public float Cost {  get; set; }
+
+        [DataType(DataType.DateTime)]
         public DateTime DateOfOrder { get; set; }
-        public bool IsFavorited { get; set; }
-        public string Status { get; set; }
+
+        public bool? IsFavorited { get; set; }
+
+        public string? Status { get; set; }
 
         // Relational Properties
         public Customer Customer { get; set; }
+
+        [ForeignKey("Customer")]
         public int CustomerId { get; set; }
         public ICollection<Product> Products { get; set; } = new List<Product>();
 

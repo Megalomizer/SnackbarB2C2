@@ -13,11 +13,11 @@ namespace SnackbarB2C2.Models
         public string FirstName { get; set; }
 
         [MaxLength(50)]
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
 
         [Required]
         public string Email { get; set; }
-        public string Phone {  get; set; }
+        public string? Phone {  get; set; }
 
         // Relational Properties
         public ICollection<Order> Orders { get; set; } = new List<Order>();

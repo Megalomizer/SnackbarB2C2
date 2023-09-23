@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SnackbarB2C2.props" />
+</Project>
