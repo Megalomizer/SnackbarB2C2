@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-namespace SnackbarB2C2.Models
+namespace SnackbarB2C2Library
 {
     public class Product
     {

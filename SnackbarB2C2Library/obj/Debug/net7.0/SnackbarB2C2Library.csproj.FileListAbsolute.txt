@@ -1,0 +1,11 @@
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2Library\bin\Debug\net7.0\SnackbarB2C2Library.deps.json
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2Library\bin\Debug\net7.0\SnackbarB2C2Library.dll
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2Library\bin\Debug\net7.0\SnackbarB2C2Library.pdb
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2Library\obj\Debug\net7.0\SnackbarB2C2Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2Library\obj\Debug\net7.0\SnackbarB2C2Library.AssemblyInfoInputs.cache
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2Library\obj\Debug\net7.0\SnackbarB2C2Library.AssemblyInfo.cs
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2Library\obj\Debug\net7.0\SnackbarB2C2Library.csproj.CoreCompileInputs.cache
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2Library\obj\Debug\net7.0\SnackbarB2C2Library.dll
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2Library\obj\Debug\net7.0\refint\SnackbarB2C2Library.dll
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2Library\obj\Debug\net7.0\SnackbarB2C2Library.pdb
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2Library\obj\Debug\net7.0\ref\SnackbarB2C2Library.dll

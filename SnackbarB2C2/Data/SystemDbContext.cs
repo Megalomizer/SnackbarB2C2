@@ -1,4 +1,4 @@
-﻿using SnackbarB2C2.Models;
+﻿using SnackbarB2C2Library;
 using Microsoft.EntityFrameworkCore;
 
 namespace SnackbarB2C2.Data

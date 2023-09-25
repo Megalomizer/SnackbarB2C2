@@ -1,13 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SnackbarB2C2.Models
+namespace SnackbarB2C2Library
 {
     public class Transaction
     {
         // Properties
         [Key]
         public int Id { get; set; }
+
         [DataType(DataType.Currency)]
         public float Cost { get; set; }
         public int? Discount { get; set; }
@@ -25,9 +26,9 @@ namespace SnackbarB2C2.Models
         [ForeignKey("Order")]
         public int OrderId { get; set; }
 
-        // Constructor
+        // Constructors
         public Transaction() { }
-        public Transaction(int id, float cost, int discount,  DateTime dateOfTransaction, Customer customer, Order order)
+        public Transaction(int id, float cost, int discount, DateTime dateOfTransaction, Customer customer, Order order)
         {
             Id = id;
             Cost = cost;
@@ -35,6 +36,15 @@ namespace SnackbarB2C2.Models
             DateOfTransaction = dateOfTransaction;
             Customer = customer;
             Order = order;
+        }
+        public Transaction(int id, float cost, int discount, DateTime dateOfTransaction, int customerId, int orderId)
+        {
+            Id = id;
+            Cost = cost;
+            Discount = discount;
+            DateOfTransaction = dateOfTransaction;
+            CustomerId = customerId;
+            OrderId = orderId;
         }
     }
 }

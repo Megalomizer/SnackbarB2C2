@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "08bemkXTGDLvP2uqoe/e1A2rmMgdvk3aFLg3+NzIPuU=",
+  "Hash": "3AJorQ90ddEgf1Y3v1mvMBQhMuQjjvooxmyWR5mbYqQ=",
   "Source": "SnackbarB2C2",
   "BasePath": "_content/SnackbarB2C2",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\levif\\source\\repos\\SnackbarB2C2\\SnackbarB2C2\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\SnackbarB2C2.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\levif\\source\\repos\\SnackbarB2C2\\SnackbarB2C2\\wwwroot\\css\\ButtonStyleSheet.css",
+      "SourceId": "SnackbarB2C2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\levif\\source\\repos\\SnackbarB2C2\\SnackbarB2C2\\wwwroot\\",
+      "BasePath": "_content/SnackbarB2C2",
+      "RelativePath": "css/ButtonStyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ButtonStyleSheet.css"
     },
     {
       "Identity": "C:\\Users\\levif\\source\\repos\\SnackbarB2C2\\SnackbarB2C2\\wwwroot\\css\\site.css",

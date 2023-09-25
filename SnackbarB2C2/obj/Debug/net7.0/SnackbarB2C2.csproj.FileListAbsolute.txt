@@ -251,3 +251,5 @@ C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2\bin\Debug\net7.0\ru\Micros
 C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2\bin\Debug\net7.0\SnackbarB2C2Library.dll
+C:\Users\levif\source\repos\SnackbarB2C2\SnackbarB2C2\bin\Debug\net7.0\SnackbarB2C2Library.pdb

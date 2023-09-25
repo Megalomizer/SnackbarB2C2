@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Localization;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SnackbarB2C2.Models
+namespace SnackbarB2C2Library
 {
     public class Order
     {

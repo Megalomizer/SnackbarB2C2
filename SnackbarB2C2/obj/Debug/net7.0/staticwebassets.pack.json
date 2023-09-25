@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\SnackbarB2C2.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\levif\\source\\repos\\SnackbarB2C2\\SnackbarB2C2\\wwwroot\\css\\ButtonStyleSheet.css",
+      "PackagePath": "staticwebassets\\css\\ButtonStyleSheet.css"
+    },
+    {
       "Id": "C:\\Users\\levif\\source\\repos\\SnackbarB2C2\\SnackbarB2C2\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "SnackbarB2C2Library/1.0.0": {
+        "runtime": {
+          "SnackbarB2C2Library.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SnackbarB2C2Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
