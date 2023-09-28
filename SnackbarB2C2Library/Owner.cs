@@ -19,7 +19,7 @@ namespace SnackbarB2C2Library
         public string? Phone { get; set; }
 
         // Relational Properties
-        public ICollection<Product> Products { get; set; } = new List<Product>();
+        public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 
         // Constructors
         public Owner() { }

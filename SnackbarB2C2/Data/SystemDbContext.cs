@@ -17,7 +17,7 @@ namespace SnackbarB2C2.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            base.OnConfiguring(optionsBuilder); 
         }
     }
 }

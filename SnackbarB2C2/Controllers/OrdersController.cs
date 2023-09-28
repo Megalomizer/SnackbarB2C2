@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Humanizer.Localisation.TimeToClockNotation;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SnackbarB2C2.Data;
 using SnackbarB2C2.Models;
+using SnackbarB2C2Library;
 
 namespace SnackbarB2C2.Controllers
 {
     public class OrdersController : Controller
     {
         private readonly SystemDbContext _context;
+        private static List<Product> newOrderProductList = new();
 
         public OrdersController(SystemDbContext context)
         {
@@ -37,6 +41,7 @@ namespace SnackbarB2C2.Controllers
             var order = await _context.Orders
                 .Include(o => o.Customer)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (order == null)
             {
                 return NotFound();
@@ -48,121 +53,71 @@ namespace SnackbarB2C2.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Email");
-            return View();
+            List<Product> productList = _context.Products.ToList();
+            VMOrderProducts model = new VMOrderProducts();
+            model.Products = productList;
+            return View(model);
         }
 
-        // POST: Orders/Create
+        // Create new order!
+        public IActionResult CreateNewOrder()
+        {
+            // Get the list of new items and clear the static list
+            List<Product> products = new();
+            if (newOrderProductList != null)
+            {
+                products = newOrderProductList;
+            }
+
+            // Get the other properties
+            int customerid = 2;
+            float cost = 0;
+            foreach(Product product in products) // Get the total price of all products together
+            {
+                cost += product.Price;
+            }
+
+            DateTime dateoforder = DateTime.Now; // Get current Date and Time
+            Customer customer = _context.Customer.Where(customer => customer.Id == customerid).First(); //Get customer with corresponding id
+
+            Order order = new Order(0, cost, dateoforder, customer, products); // id = 0 cause it gets set in db
+
+            _context.Orders.Add(order);
+            _context.SaveChanges();
+
+            newOrderProductList.Clear();
+
+            return RedirectToAction("Index");
+        }
+
+        // POST: Products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Cost,DateOfOrder,IsFavorited,Status,CustomerId")] Order order)
+        public async Task<IActionResult> Create([Bind("Id,Cost,DateOfOrder,IsFavorited,Status,CustomerId,Products")] Order order)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(order);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Email", order.CustomerId);
             return View(order);
         }
 
-        // GET: Orders/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult AddProductToOrderlist()
         {
-            if (id == null || _context.Orders == null)
-            {
-                return NotFound();
-            }
+            var urlId = RouteData.Values["id"];
 
-            var order = await _context.Orders.FindAsync(id);
-            if (order == null)
+            foreach(var item in _context.Products)
             {
-                return NotFound();
-            }
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Email", order.CustomerId);
-            return View(order);
-        }
-
-        // POST: Orders/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Cost,DateOfOrder,IsFavorited,Status,CustomerId")] Order order)
-        {
-            if (id != order.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                if(item.Id == Int32.Parse(urlId.ToString()))
                 {
-                    _context.Update(order);
-                    await _context.SaveChangesAsync();
+                    newOrderProductList.Add(item);
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!OrderExists(order.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Email", order.CustomerId);
-            return View(order);
-        }
-
-        // GET: Orders/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Orders == null)
-            {
-                return NotFound();
             }
 
-            var order = await _context.Orders
-                .Include(o => o.Customer)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (order == null)
-            {
-                return NotFound();
-            }
-
-            return View(order);
-        }
-
-        // POST: Orders/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.Orders == null)
-            {
-                return Problem("Entity set 'SystemDbContext.Orders'  is null.");
-            }
-            var order = await _context.Orders.FindAsync(id);
-            if (order != null)
-            {
-                _context.Orders.Remove(order);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool OrderExists(int id)
-        {
-          return (_context.Orders?.Any(e => e.Id == id)).GetValueOrDefault();
+            return RedirectToAction("Create");
         }
     }
 }

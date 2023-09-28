@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\css\\ButtonStyleSheet.css"
     },
     {
+      "Id": "C:\\Users\\levif\\source\\repos\\SnackbarB2C2\\SnackbarB2C2\\wwwroot\\css\\bootstrapSketchy.css",
+      "PackagePath": "staticwebassets\\css\\bootstrapSketchy.css"
+    },
+    {
+      "Id": "C:\\Users\\levif\\source\\repos\\SnackbarB2C2\\SnackbarB2C2\\wwwroot\\css\\bootstrapUnited.css",
+      "PackagePath": "staticwebassets\\css\\bootstrapUnited.css"
+    },
+    {
       "Id": "C:\\Users\\levif\\source\\repos\\SnackbarB2C2\\SnackbarB2C2\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

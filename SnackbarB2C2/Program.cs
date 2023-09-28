@@ -11,6 +11,7 @@ namespace SnackbarB2C2
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
             builder.Services.AddDbContext<SystemDbContext>(DbContextOptions => DbContextOptions.UseSqlServer(
                 builder.Configuration.GetConnectionString("DefaultConnection")));
 

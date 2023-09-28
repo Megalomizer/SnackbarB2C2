@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SnackbarB2C2.Data;
-using SnackbarB2C2.Models;
+using SnackbarB2C2Library;
 
 namespace SnackbarB2C2.Controllers
 {
